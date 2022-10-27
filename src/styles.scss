@@ -1,1 +1,222 @@
-/* You can add global styles to this file, and also import other style files */
+// RESET
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  margin: unset;
+  padding: unset;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+// THEME
+:root {
+  --bc-font-size--title: 1rem;
+  --bc-title-color: #959db5;
+  --app-layer-4-bg: #2b3143;
+
+  --app-font-weight-medium: 500;
+  --app-font-weight-semi-bold: 600;
+
+  --app-color-header: #B4D2E0;
+  --app-color-layer-1: #1A262B;
+  --app-color-layer-2: #3C5762;
+  --app-color-layer-3: #27363C;
+  --app-color-layer-4: #1F292E;
+
+  --app-timeline-time-color: #B4D2E0;
+}
+
+.app-layer-1 {
+  background-color: var(--app-color-layer-1);
+}
+.app-layer-2 {
+  background-color: var(--app-color-layer-2);
+}
+.app-layer-3 {
+  background-color: var(--app-color-layer-3);
+}
+.app-layer-4 {
+  background-color: var(--app-color-layer-4);
+}
+.wrapper {
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--app-color-layer-1);
+  padding: 2rem;
+}
+
+.app-timeline {
+  position: relative;
+  //background: var(--app-color-layer-4);
+}
+
+.app-timeline-title {
+  color: var(--app-timeline-time-color) !important;
+  font-weight: var(--app-font-weight-medium);
+  text-transform: uppercase;
+  width: 220px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 45px;
+  z-index: 1;
+  padding-left: 24px;
+}
+
+/* ITEM */
+//.vis-item.vis-background.green {
+//  background: #18fdb0;
+//  height: 20px !important;
+//  border-radius: 8px;
+//}
+//
+//.vis-item.vis-background.red {
+//  background: #d2354f;
+//  height: 20px !important;
+//  border-radius: 8px;
+//}
+//
+//.vis-item.vis-background.orange {
+//  background: #c74f30;
+//  height: 20px !important;
+//  border-radius: 8px;
+//}
+//
+//.vis-item.vis-background.purple {
+//  background: #a32f80;
+//  height: 20px !important;
+//  border-radius: 8px;
+//}
+//
+//.vis-item.vis-background.inner-green {
+//  background-color: rgba(black, 0.3);
+//  margin-top: 28px !important;
+//  height: 5px !important;
+//  border-radius: 20px;
+//}
+//
+//.vis-item.vis-background.inner-red {
+//  background-color: rgba(black, 0.3);
+//  margin-top: 28px !important;
+//  height: 5px !important;
+//  border-radius: 20px;
+//}
+//
+//.vis-item.vis-background.inner-orange {
+//  background-color: rgba(black, 0.3);
+//  margin-top: 28px !important;
+//  height: 5px !important;
+//  border-radius: 20px;
+//}
+//
+//.vis-item.vis-background.inner-purple {
+//  background-color: rgba(black, 0.3);
+//  margin-top: 28px !important;
+//  height: 5px !important;
+//  border-radius: 20px;
+//}
+
+/* TEXT */
+.vis-time-axis .vis-text {
+  text-align: center;
+  font-size: 16px;
+  color: var(--app-timeline-time-color) !important;
+  font-weight: var(--app-font-weight-medium);
+  padding: 10px 5px !important;
+}
+
+/* GROUPS */
+.vis-labelset .vis-label .vis-inner {
+  color: var(--bc-title-color);
+  font-size: 16px;
+  width: 100%;
+}
+
+/* BACKGROUNDS */
+.vis-time-axis .vis-grid.vis-saturday,
+.vis-time-axis .vis-grid.vis-sunday,
+.vis-time-axis .vis-grid.vis-monday,
+.vis-time-axis .vis-grid.vis-tuesday,
+.vis-time-axis .vis-grid.vis-wednesday,
+.vis-time-axis .vis-grid.vis-thursday,
+.vis-time-axis .vis-grid.vis-friday {
+  background: #232834 !important;
+}
+.vis-label.vis-nesting-group.vis-nested-group.vis-group-level-1 {
+  background: #232834;
+  cursor: auto;
+}
+
+.vis-label.vis-nesting-group.vis-nested-group.vis-group-level-2,
+.vis-label.vis-nested-group.vis-group-level-3 {
+  background: #262c39;
+}
+
+/* Borders */
+.vis-panel.vis-bottom,
+.vis-panel.vis-center,
+.vis-panel.vis-left,
+.vis-panel.vis-right,
+.vis-panel.vis-top,
+.vis-timeline,
+.vis-time-axis .vis-grid.vis-minor,
+.vis-time-axis .vis-grid.vis-major,
+.vis-foreground .vis-group {
+  border-color: transparent !important;
+}
+.vis-labelset .vis-label {
+  border-bottom: 1px solid #30343f !important;
+}
+
+.vis-label.app-timeline-group {
+  display: flex;
+  align-items: center;
+  &::before {
+    content: none !important;
+  }
+}
+
+.app-timeline-group {
+  min-width: 220px;
+  color: #B4D2E0 !important;
+  background: var(--app-color-layer-4) !important;
+  border: none !important;
+
+  &.equipment {
+    margin-top: 5px;
+  }
+
+  .vis-inner {
+    padding-left: 24px !important;
+  }
+}
+
+.app-timeline-item {
+  background-color: #00939A !important;
+  border-radius: 3px !important;
+  //font-weight: var(--app-font-weight-semi-bold);
+  color: #FFFFFF !important;
+  border: none !important;
+
+  &.using {
+    background-color: #00939A !important;
+  }
+  &.stop {
+    background-color: #D2354F !important;
+  }
+  &.inspection {
+    background-color: #ECB833 !important;
+  }
+}
